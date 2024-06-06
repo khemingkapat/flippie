@@ -1,0 +1,117 @@
+#define global variable
+#incase we want to change it we could do it
+
+units:
+  #Proxy Spacing Variable
+  kx: u
+  ky: u
+
+  #Pading Variable
+  px: kx + 4
+  py: ky + 4
+
+points:
+  rotate: 7
+  zones:
+    matrix:
+      anchor.shift: [100,-100]
+      key.padding: ky
+      key.spread: kx
+      columns:
+        pinky:
+          rows:
+            home.shift: [0,0]
+            top.shift: [0,0]
+          key:
+            shift: [-2,0]
+        ring:
+          key:
+            stagger: 12
+            splay: -7
+        middle:
+          key.stagger: kx/3
+        index:
+          key.stagger: -kx/3
+        reach:
+          key.stagger: -kx/6
+      rows:
+        bottom:
+        home:
+        top:
+    thumb_fan:
+      key.padding: ky
+      key.spread: kx
+      anchor:
+        ref: matrix_index_bottom
+        shift : [.5kx,-1.3kx]
+      columns:
+        inner:
+        middle:
+          key:
+            splay: 60
+            shift: [.3kx,-.2kx]
+            width: 1.5kx
+        reach:
+          key:
+            shift: [-.7kx,-1.2kx]
+            width: 1.5kx
+      rows:
+        cluster:
+
+outlines:  
+  raw:
+    - what: rectangle
+      where: true
+      size: [px,py]  
+
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-.5,ky-.5]
+
+  board:
+    - what: polygon
+      operation: stack
+      points:
+      - ref: matrix_pinky_top
+        shift: [-0.7kx,0.5kx]
+      - ref: matrix_ring_top
+        shift: [0,kx]
+      - ref: matrix_middle_top
+        shift: [0,0.7kx]
+      - ref: matrix_index_top
+        shift: [0,kx]
+      - ref: matrix_reach_top
+        shift: [1.8kx,0.5kx]
+      - ref: thumb_fan_reach_cluster
+        shift: [1kx,.45kx]
+      - ref: thumb_fan_reach_cluster
+        shift: [1kx,-.7kx]
+      - ref: thumb_fan_reach_cluster
+        shift: [-.7kx,-.7kx]
+      - ref: thumb_fan_inner_cluster
+        shift: [0,-kx]
+      - ref: matrix_pinky_bottom
+        shift: [-.7kx,-.6kx]
+      fillet: 2
+  combo:
+    - name: board
+    - operation: subtract
+      name: keys
+
+pcbs:
+  flipper:
+    outlines:
+    - outline: board
+
+    footprints:
+      promicro:
+        what: promicro_pretty
+        where:
+          ref: matrix_reach_top
+          shift: [2px,2py]
+          rotate: -90
+      hole:
+        what: mountinghole
+        where:
+          ref: [matrix_pinky_top]
