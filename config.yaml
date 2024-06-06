@@ -45,13 +45,13 @@ points:
       key.spread: kx
       anchor:
         ref: matrix_index_bottom
-        shift : [.5kx,-1.3kx]
+        shift : [.5kx,-1.167kx]
       columns:
         inner:
         middle:
           key:
             splay: 60
-            shift: [.3kx,-.2kx]
+            shift: [.3kx,-.26kx]
             width: 1.5kx
         reach:
           key:
@@ -79,8 +79,8 @@ outlines:
         shift: [-0.7kx,0.5kx]
       - ref: matrix_ring_top
         shift: [0,kx]
-      - ref: matrix_middle_top
-        shift: [0,0.7kx]
+      # - ref: matrix_middle_top
+      #   shift: [0,0.7kx]
       - ref: matrix_index_top
         shift: [0,kx]
       - ref: matrix_reach_top
@@ -90,9 +90,9 @@ outlines:
       - ref: thumb_fan_reach_cluster
         shift: [1kx,-.7kx]
       - ref: thumb_fan_reach_cluster
-        shift: [-.7kx,-.7kx]
+        shift: [-kx,-.7kx]
       - ref: thumb_fan_inner_cluster
-        shift: [0,-kx]
+        shift: [0,-.7kx]
       - ref: matrix_pinky_bottom
         shift: [-.7kx,-.6kx]
       fillet: 2
@@ -125,8 +125,24 @@ pcbs:
           reverse: true
           from: "{{column_net}}"
           to: "{{colrow}}"
+      diode:
+        what: diode
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -.435kx]
       promicro:
         what: nicenano
         where:
           ref: matrix_reach_top
           shift: [px,-.3py]
+      jst:
+        what: jstph
+        where:
+          ref: matrix_reach_bottom
+          shift: [px,0]
+        params:
+          pos: RAW
+          neg: GND
