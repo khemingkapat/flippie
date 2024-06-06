@@ -24,6 +24,7 @@ points:
             top.shift: [0,0]
           key:
             shift: [-2,0]
+            column_net: P16
         ring:
           key:
             stagger: 12
@@ -36,6 +37,7 @@ points:
           key.stagger: -kx/6
       rows:
         bottom:
+          row_net: P18
         home:
         top:
     thumb_fan:
@@ -105,13 +107,26 @@ pcbs:
     - outline: board
 
     footprints:
+      sw_hs:
+        what: mx
+        where: true
+        params:
+          keycaps: true
+          reverse: true
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      sw:
+        what: mx
+        where: true
+        adjust.rotate: 180
+        params:
+          keycaps: true
+          reverse: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
       promicro:
-        what: promicro_pretty
+        what: nicenano
         where:
           ref: matrix_reach_top
-          shift: [2px,2py]
-          rotate: -90
-      hole:
-        what: mountinghole
-        where:
-          ref: [matrix_pinky_top]
+          shift: [px,-.3py]
