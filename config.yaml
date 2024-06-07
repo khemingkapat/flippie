@@ -11,6 +11,9 @@ units:
   py: ky + 4
 
 points:
+  key:
+    tags:
+      1u: true
   rotate: 7
   zones:
     matrix:
@@ -24,22 +27,32 @@ points:
             top.shift: [0,0]
           key:
             shift: [-2,0]
-            column_net: P16
+            column_net: P21
         ring:
           key:
             stagger: 12
             splay: -7
+            column_net: P20
         middle:
-          key.stagger: kx/3
+          key:
+            stagger: kx/3
+            column_net: P19
+
         index:
-          key.stagger: -kx/3
+          key:
+            stagger: -kx/3
+            column_net: P18
         reach:
-          key.stagger: -kx/6
+          key:
+            stagger: -kx/6
+            column_net: P15
       rows:
         bottom:
-          row_net: P18
+          row_net: P10
         home:
+          row_net: P16
         top:
+          row_net: P14
     thumb_fan:
       key.padding: ky
       key.spread: kx
@@ -48,17 +61,21 @@ points:
         shift : [.5kx,-1.167kx]
       columns:
         inner:
+          key.column_net: P19
         middle:
           key:
             splay: 60
             shift: [.3kx,-.26kx]
-            width: 1.5kx
+            width: 2kx
+            column_net: P18
         reach:
           key:
-            shift: [-.7kx,-1.2kx]
-            width: 1.5kx
+            shift: [-.7kx,-1.255kx]
+            width: 2kx
+            column_net: P15
       rows:
         cluster:
+          row_net: P9
 
 outlines:  
   raw:
@@ -101,11 +118,20 @@ outlines:
     - operation: subtract
       name: keys
 
+  keycaps15:
+    - what: rectangle
+      where: [thumb_fan_middle_cluster,thumb_fan_reach_cluster]
+      size: [1.5kx-.5,ky-.5]
+  #  
+  preview:
+    [keys,keycaps15]
+
 pcbs:
   flipper:
     outlines:
-    - outline: board
-
+      - outline: board
+      - outline: preview
+        layer: Eco1.User
     footprints:
       sw_hs:
         what: mx
@@ -138,11 +164,35 @@ pcbs:
         where:
           ref: matrix_reach_top
           shift: [px,-.3py]
+        params:
+          reversible: true
+          include_traces: true
       jst:
-        what: jstph
+        what: jst
         where:
           ref: matrix_reach_bottom
-          shift: [px,0]
+          shift: [px,.1px]
+          rotate: 180
         params:
-          pos: RAW
-          neg: GND
+          reversible: true
+
+      slider:
+        what: power_switch
+        where:
+          ref: matrix_reach_bottom
+          shift: [1.44px,0]
+        params:
+          reversible: true
+          from: BAT_P
+          to: RAW
+      rst:
+        what: reset_switch
+        where:
+          ref: matrix_reach_bottom
+          shift: [1.44px,.45px]
+          rotate: 90
+        params:
+          reversible: true
+
+
+        
