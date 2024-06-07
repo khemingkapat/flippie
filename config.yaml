@@ -65,12 +65,12 @@ points:
         middle:
           key:
             splay: 60
-            shift: [.3kx,-.26kx]
+            shift: [.3kx,-.3kx]
             width: 2kx
             column_net: P18
         reach:
           key:
-            shift: [-.7kx,-1.255kx]
+            shift: [-.7kx,-1.3kx]
             width: 2kx
             column_net: P15
       rows:
@@ -101,37 +101,41 @@ outlines:
       - ref: matrix_index_top
         shift: [0,kx]
       - ref: matrix_reach_top
-        shift: [1.8kx,0.5kx]
+        shift: [0.5kx,0.7kx]
+      - ref: matrix_reach_top
+        shift: [1.86kx,0.7kx]
+      - ref: matrix_reach_bottom
+        shift: [1.86kx,-.05kx]
       - ref: thumb_fan_reach_cluster
-        shift: [1kx,.45kx]
+        shift: [1.18kx,-.65kx]
       - ref: thumb_fan_reach_cluster
-        shift: [1kx,-.7kx]
-      - ref: thumb_fan_reach_cluster
-        shift: [-kx,-.7kx]
+        shift: [-1.15kx,-.65kx]
       - ref: thumb_fan_inner_cluster
-        shift: [0,-.7kx]
+        shift: [.5kx,-.7kx]
       - ref: matrix_pinky_bottom
         shift: [-.7kx,-.6kx]
       fillet: 2
+
+  keycaps15:
+    - what: rectangle
+      where: [thumb_fan_middle_cluster,thumb_fan_reach_cluster]
+      size: [2kx-.5,ky-.5]
+  #  
+  preview:
+    [keys,keycaps15]
+
   combo:
     - name: board
     - operation: subtract
       name: keys
 
-  keycaps15:
-    - what: rectangle
-      where: [thumb_fan_middle_cluster,thumb_fan_reach_cluster]
-      size: [1.5kx-.5,ky-.5]
-  #  
-  preview:
-    [keys,keycaps15]
-
 pcbs:
   flipper:
     outlines:
-      - outline: board
       - outline: preview
         layer: Eco1.User
+      - outline: board
+      
     footprints:
       sw_hs:
         what: mx
@@ -163,24 +167,23 @@ pcbs:
         what: nicenano
         where:
           ref: matrix_reach_top
-          shift: [px,-.3py]
+          shift: [0.85px,-0.21px]
         params:
           reversible: true
           include_traces: true
       jst:
         what: jst
         where:
-          ref: matrix_reach_bottom
-          shift: [px,.1px]
-          rotate: 180
+          ref: matrix_reach_top
+          shift: [1.7kx,-1.4kx]
+          rotate : -90
         params:
           reversible: true
-
-      slider:
+      pwr:
         what: power_switch
         where:
-          ref: matrix_reach_bottom
-          shift: [1.44px,0]
+          ref: matrix_reach_top
+          shift: [1.75kx,-.3kx]
         params:
           reversible: true
           from: BAT_P
@@ -188,8 +191,8 @@ pcbs:
       rst:
         what: reset_switch
         where:
-          ref: matrix_reach_bottom
-          shift: [1.44px,.45px]
+          ref: matrix_reach_top
+          shift: [1.75kx,.4kx]
           rotate: 90
         params:
           reversible: true
