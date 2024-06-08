@@ -11,9 +11,8 @@ units:
   py: ky + 4
 
 points:
-  key:
-    tags:
-      1u: true
+  key.tags:
+    - normal
   rotate: 7
   zones:
     matrix:
@@ -65,14 +64,18 @@ points:
         middle:
           key:
             splay: 60
-            shift: [.3kx,-.3kx]
+            shift: [.3kx,-.32kx]
             width: 2kx
             column_net: P18
+            tags:
+              - long
         reach:
           key:
-            shift: [-.7kx,-1.3kx]
+            shift: [-.7kx,-1.32kx]
             width: 2kx
             column_net: P15
+            tags:
+              - long
       rows:
         cluster:
           row_net: P9
@@ -81,13 +84,7 @@ outlines:
   raw:
     - what: rectangle
       where: true
-      size: [px,py]  
-
-  keys:
-    - what: rectangle
-      where: true
-      size: [kx-.5,ky-.5]
-
+      size: [kx,ky]  
   board:
     - what: polygon
       operation: stack
@@ -96,8 +93,6 @@ outlines:
         shift: [-0.7kx,0.5kx]
       - ref: matrix_ring_top
         shift: [0,kx]
-      # - ref: matrix_middle_top
-      #   shift: [0,0.7kx]
       - ref: matrix_index_top
         shift: [0,kx]
       - ref: matrix_reach_top
@@ -114,20 +109,23 @@ outlines:
         shift: [.5kx,-.7kx]
       - ref: matrix_pinky_bottom
         shift: [-.7kx,-.6kx]
-      fillet: 2
-
-  keycaps15:
+      fillet: 4
+  keys:
     - what: rectangle
-      where: [thumb_fan_middle_cluster,thumb_fan_reach_cluster]
+      where: [normal]
+      size: [kx-.5,ky-.5]
+  keycaps2:
+    - what: rectangle
+      where: [long]
       size: [2kx-.5,ky-.5]
-  #  
+
   preview:
-    [keys,keycaps15]
+    [keys,keycaps2]
 
   combo:
     - name: board
     - operation: subtract
-      name: keys
+      name: preview
 
 pcbs:
   flipper:
@@ -163,6 +161,31 @@ pcbs:
           to: "{{row_net}}"
         adjust:
           shift: [0, -.435kx]
+
+      opt_sw:
+        what: mx
+        where:
+          ref: thumb_fan_middle_cluster
+          shift: [.5kx,0]
+        adjust.rotate: 180
+        params:
+          keycaps: true
+          reverse: true
+          from: P18
+          to: middle_cluster
+      opt_sw_hs:
+        what: mx
+        where:
+          ref: thumb_fan_middle_cluster
+          shift: [.5kx,0]
+        params:
+          keycaps: true
+          reverse: true
+          hotswap: true
+          from: P18
+          to: middle_cluster
+
+
       promicro:
         what: nicenano
         where:
