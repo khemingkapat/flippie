@@ -162,29 +162,29 @@ pcbs:
         adjust:
           shift: [0, -.435kx]
 
-      opt_sw:
-        what: mx
-        where:
-          ref: thumb_fan_middle_cluster
-          shift: [.5kx,0]
-        adjust.rotate: 180
-        params:
-          keycaps: true
-          reverse: true
-          from: P18
-          to: middle_cluster
-      opt_sw_hs:
-        what: mx
-        where:
-          ref: thumb_fan_middle_cluster
-          shift: [.5kx,0]
-        params:
-          keycaps: true
-          reverse: true
-          hotswap: true
-          from: P18
-          to: middle_cluster
-
+      # opt_sw:
+      #   what: mx
+      #   where:
+      #     ref: thumb_fan_middle_cluster
+      #     shift: [.5kx,0]
+        #   adjust.rotate: 180
+      #   params:
+      #     keycaps: true
+      #     reverse: true
+      #     from: P18
+      #     to: middle_cluster
+      # opt_sw_hs:
+      #   what: mx
+      #   where:
+      #     ref: thumb_fan_middle_cluster
+      #     shift: [.5kx,0]
+      #   params:
+      #     keycaps: true
+      #     reverse: true
+      #     hotswap: true
+      #     from: P18
+      #     to: middle_cluster
+      #
 
       promicro:
         what: nicenano
@@ -219,3 +219,12 @@ pcbs:
           rotate: 90
         params:
           reversible: true
+
+      # pimoroni:
+      #   what: pimoroni
+      #   adjust.rotate: -90
+      #   where:
+      #     ref: matrix_middle_bottom
+      #     shift: [0.23kx,-.75ky]
+
+
