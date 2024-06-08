@@ -220,11 +220,11 @@ pcbs:
         params:
           reversible: true
 
-      # pimoroni:
-      #   what: pimoroni
-      #   adjust.rotate: -90
-      #   where:
-      #     ref: matrix_middle_bottom
-      #     shift: [0.23kx,-.75ky]
+      pimoroni:
+        what: pimoroni
+        adjust.rotate: -90
+        where:
+          ref: matrix_middle_bottom
+          shift: [.25kx,-.65ky]
 
 
