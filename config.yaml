@@ -128,7 +128,7 @@ outlines:
       name: preview
 
 pcbs:
-  flipper:
+  flippie:
     outlines:
       - outline: preview
         layer: Eco1.User
