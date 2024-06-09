@@ -162,38 +162,15 @@ pcbs:
         adjust:
           shift: [0, -.435kx]
 
-      # opt_sw:
-      #   what: mx
-      #   where:
-      #     ref: thumb_fan_middle_cluster
-      #     shift: [.5kx,0]
-        #   adjust.rotate: 180
-      #   params:
-      #     keycaps: true
-      #     reverse: true
-      #     from: P18
-      #     to: middle_cluster
-      # opt_sw_hs:
-      #   what: mx
-      #   where:
-      #     ref: thumb_fan_middle_cluster
-      #     shift: [.5kx,0]
-      #   params:
-      #     keycaps: true
-      #     reverse: true
-      #     hotswap: true
-      #     from: P18
-      #     to: middle_cluster
-      #
-
       promicro:
         what: nicenano
         where:
           ref: matrix_reach_top
-          shift: [0.85px,-0.21px]
+          shift: [0.9px,-0.21px]
         params:
           reversible: true
           include_traces: true
+
       jst:
         what: jst
         where:
