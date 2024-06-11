@@ -153,6 +153,7 @@ pcbs:
           reverse: true
           from: "{{column_net}}"
           to: "{{colrow}}"
+
       diode:
         what: diode
         where: true
@@ -162,20 +163,29 @@ pcbs:
         adjust:
           shift: [0, -.435kx]
 
-      promicro:
+      mcu:
         what: nicenano
         where:
           ref: matrix_reach_top
-          shift: [0.9px,-0.21px]
+          shift: [1.08kx,-0.19px]
         params:
           reversible: true
           include_traces: true
 
+      display:
+        what: oled
+        where:
+          ref: matrix_reach_bottom
+          shift: [1.08kx,1.5kx]
+        params:
+          reversible: true
+          include_traces: true
+          
       jst:
         what: jst
         where:
           ref: matrix_reach_top
-          shift: [1.7kx,-1.4kx]
+          shift: [1.7kx,-1.7kx]
           rotate : -90
         params:
           reversible: true
