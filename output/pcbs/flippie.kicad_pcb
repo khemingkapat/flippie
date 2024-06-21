@@ -5204,7 +5204,12 @@
                 )
             )
         )
-      )
+        (pad 1 thru_hole oval (at 7 0 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) (net 31 "VCC"))
+        (pad 2 thru_hole oval (at 7 2.54 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) (net 34 "P2"))
+        (pad 3 thru_hole oval (at 7 5.08 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) (net 35 "P3"))
+        (pad 4 thru_hole oval (at 7 7.62 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) (net 77 "INT"))
+        (pad 5 thru_hole oval (at 7 10.16 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) (net 29 "GND"))
+    )
     
   (gr_line (start 101.4026967 97.6197628) (end 119.7648005 95.36518) (angle 90) (layer Eco1.User) (width 0.15))
 (gr_line (start 119.7648005 95.36518) (end 117.5102177 77.0030762) (angle 90) (layer Eco1.User) (width 0.15))

@@ -430,7 +430,12 @@ module.exports = {
                 )
             )
         )
-      )
+        (pad 1 thru_hole oval (at 7 0 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.VCC})
+        (pad 2 thru_hole oval (at 7 2.54 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.SDA})
+        (pad 3 thru_hole oval (at 7 5.08 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.SCL})
+        (pad 4 thru_hole oval (at 7 7.62 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.INT})
+        (pad 5 thru_hole oval (at 7 10.16 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.GND})
+    )
     `
   }
 }
