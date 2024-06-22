@@ -65,20 +65,20 @@ module.exports = {
         (pad 5 thru_hole oval (at 0 10.16) (size 1.7 1.7) (drill 1) (layers *.Cu *.Mask) ${local_nets[4]})
 
         ${''/* pin name text */}
-        (fp_text user VCC (at 3 0 ${p.r} ) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))))
-        (fp_text user SDA (at 3 2.54 ${p.r} ) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))))
-        (fp_text user SCL (at 3 5.08 ${p.r} ) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))))
-        (fp_text user INT (at 3 7.62 ${p.r} ) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))))
-        (fp_text user GND (at 3 10.16 ${p.r} ) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))))
+        (fp_text user VCC (at 2.25 0 ${p.r} ) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))))
+        (fp_text user SDA (at 2.25 2.54 ${p.r} ) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))))
+        (fp_text user SCL (at 2.25 5.08 ${p.r} ) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))))
+        (fp_text user INT (at 2.25 7.62 ${p.r} ) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))))
+        (fp_text user GND (at 2.25 10.16 ${p.r} ) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))))
 
         ${''/* pin name text back*/}
-        (fp_text user GND (at 3 0 ${p.r} ) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))(justify mirror)))
-        (fp_text user INT (at 3 2.54 ${p.r} ) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))(justify mirror)))
-        (fp_text user SCL (at 3 5.08 ${p.r} ) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))(justify mirror)))
-        (fp_text user SDA (at 3 7.62 ${p.r} ) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))(justify mirror)))
-        (fp_text user VCC (at 3 10.16 ${p.r} ) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))(justify mirror)))
+        (fp_text user GND (at 2.25 0 ${p.r} ) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))(justify mirror)))
+        (fp_text user INT (at 2.25 2.54 ${p.r} ) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))(justify mirror)))
+        (fp_text user SCL (at 2.25 5.08 ${p.r} ) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))(justify mirror)))
+        (fp_text user SDA (at 2.25 7.62 ${p.r} ) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))(justify mirror)))
+        (fp_text user VCC (at 2.25 10.16 ${p.r} ) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15))(justify mirror)))
 
-        (pad "1" smd custom (at 5 0 ${-90 + p.r}) (size 0.1 0.1) (layers "F.Cu" "F.Mask" "F.Paste")
+        (pad "1" smd custom (at 4 0 ${-90 + p.r}) (size 0.1 0.1) (layers "F.Cu" "F.Mask" "F.Paste")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -96,7 +96,7 @@ module.exports = {
             )
             ${local_nets[0]}
         )
-        (pad "2" smd custom (at 5 0 ${-90 + p.r}) (size 0.1 0.1) (layers "B.Cu" "B.Mask" "B.Paste")
+        (pad "2" smd custom (at 4 0 ${-90 + p.r}) (size 0.1 0.1) (layers "B.Cu" "B.Mask" "B.Paste")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -114,7 +114,7 @@ module.exports = {
             )
             ${local_nets[0]}
         )
-        (pad "11" smd custom (at 6 0 ${-90 + p.r}) (size 1.2 0.5) (layers "F.Cu" "F.Mask" "F.Paste") ${p.VCC}
+        (pad "11" smd custom (at 5 0 ${-90 + p.r}) (size 1.2 0.5) (layers "F.Cu" "F.Mask" "F.Paste") ${p.VCC}
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -131,7 +131,7 @@ module.exports = {
                 )
             )
         )
-        (pad "22" smd custom (at 6 0 ${-90 + p.r}) (size 1.2 0.5) (layers "B.Cu" "B.Mask" "B.Paste") ${p.GND}
+        (pad "22" smd custom (at 5 0 ${-90 + p.r}) (size 1.2 0.5) (layers "B.Cu" "B.Mask" "B.Paste") ${p.GND}
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -148,7 +148,7 @@ module.exports = {
                 )
             )
         )
-        (pad "3" smd custom (at 5 2.54 ${-90 + p.r}) (size 0.1 0.1) (layers "F.Cu" "F.Mask" "F.Paste")
+        (pad "3" smd custom (at 4 2.54 ${-90 + p.r}) (size 0.1 0.1) (layers "F.Cu" "F.Mask" "F.Paste")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -166,7 +166,7 @@ module.exports = {
             )
             ${local_nets[1]}
         )
-        (pad "4" smd custom (at 5 2.54 ${-90 + p.r}) (size 0.1 0.1) (layers "B.Cu" "B.Mask" "B.Paste")
+        (pad "4" smd custom (at 4 2.54 ${-90 + p.r}) (size 0.1 0.1) (layers "B.Cu" "B.Mask" "B.Paste")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -184,7 +184,7 @@ module.exports = {
             )
             ${local_nets[1]}
         )
-        (pad "33" smd custom (at 6 2.54 ${-90 + p.r}) (size 1.2 0.5) (layers "F.Cu" "F.Mask" "F.Paste") ${p.SDA}
+        (pad "33" smd custom (at 5 2.54 ${-90 + p.r}) (size 1.2 0.5) (layers "F.Cu" "F.Mask" "F.Paste") ${p.SDA}
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -201,7 +201,7 @@ module.exports = {
                 )
             )
         )
-        (pad "44" smd custom (at 6 2.54 ${-90 + p.r}) (size 1.2 0.5) (layers "B.Cu" "B.Mask" "B.Paste") ${p.INT}
+        (pad "44" smd custom (at 5 2.54 ${-90 + p.r}) (size 1.2 0.5) (layers "B.Cu" "B.Mask" "B.Paste") ${p.INT}
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -218,7 +218,7 @@ module.exports = {
                 )
             )
         )
-        (pad "5" smd custom (at 5 5.08 ${-90 + p.r}) (size 0.1 0.1) (layers "F.Cu" "F.Mask" "F.Paste")
+        (pad "5" smd custom (at 4 5.08 ${-90 + p.r}) (size 0.1 0.1) (layers "F.Cu" "F.Mask" "F.Paste")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -236,7 +236,7 @@ module.exports = {
             )
             ${local_nets[2]}
         )
-        (pad "6" smd custom (at 5 5.08 ${-90 + p.r}) (size 0.1 0.1) (layers "B.Cu" "B.Mask" "B.Paste")
+        (pad "6" smd custom (at 4 5.08 ${-90 + p.r}) (size 0.1 0.1) (layers "B.Cu" "B.Mask" "B.Paste")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -254,7 +254,7 @@ module.exports = {
             )
             ${local_nets[2]}
         )
-        (pad "55" smd custom (at 6 5.08 ${-90 + p.r}) (size 1.2 0.5) (layers "F.Cu" "F.Mask" "F.Paste") ${p.SCL}
+        (pad "55" smd custom (at 5 5.08 ${-90 + p.r}) (size 1.2 0.5) (layers "F.Cu" "F.Mask" "F.Paste") ${p.SCL}
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -271,78 +271,7 @@ module.exports = {
                 )
             )
         )
-        (pad "66" smd custom (at 6 5.08 ${-90 + p.r}) (size 1.2 0.5) (layers "B.Cu" "B.Mask" "B.Paste") ${p.SCL}
-            (clearance 0.1) (zone_connect 0)
-            (options (clearance outline) (anchor rect))
-            (primitives
-                (gr_poly
-                    (pts
-                        (xy 0.6 0)
-                        (xy -0.6 0)
-                        (xy -0.6 1)
-                        (xy 0 0.4)
-                        (xy 0.6 1)
-                    )
-                    (width 0)
-                    (fill yes)
-                )
-            )
-        )
-
-        (pad "7" smd custom (at 5 7.62 ${-90 + p.r}) (size 0.1 0.1) (layers "F.Cu" "F.Mask" "F.Paste")
-            (clearance 0.1) (zone_connect 0)
-            (options (clearance outline) (anchor rect))
-            (primitives
-                (gr_poly
-                    (pts
-                        (xy 0.6 0.4)
-                        (xy -0.6 0.4)
-                        (xy -0.6 0.2)
-                        (xy 0 -0.4)
-                        (xy 0.6 0.2)
-                    )   
-                    (width 0)
-                    (fill yes)
-                )
-            )
-            ${local_nets[3]}
-        )
-        (pad "8" smd custom (at 5 7.62 ${-90 + p.r}) (size 0.1 0.1) (layers "B.Cu" "B.Mask" "B.Paste")
-            (clearance 0.1) (zone_connect 0)
-            (options (clearance outline) (anchor rect))
-            (primitives
-                (gr_poly
-                    (pts
-                        (xy 0.6 0.4)
-                        (xy -0.6 0.4)
-                        (xy -0.6 0.2)
-                        (xy 0 -0.4)
-                        (xy 0.6 0.2)
-                    )
-                    (width 0)
-                    (fill yes)
-                )
-            )
-            ${local_nets[3]}
-        )
-        (pad "77" smd custom (at 6 7.62 ${-90 + p.r}) (size 1.2 0.5) (layers "F.Cu" "F.Mask" "F.Paste") ${p.INT}
-            (clearance 0.1) (zone_connect 0)
-            (options (clearance outline) (anchor rect))
-            (primitives
-                (gr_poly
-                    (pts
-                        (xy 0.6 0)
-                        (xy -0.6 0)
-                        (xy -0.6 1)
-                        (xy 0 0.4)
-                        (xy 0.6 1)
-                    )
-                    (width 0)
-                    (fill yes)
-                )
-            )
-        )
-        (pad "88" smd custom (at 6 7.62 ${-90 + p.r}) (size 1.2 0.5) (layers "B.Cu" "B.Mask" "B.Paste") ${p.SDA}
+        (pad "66" smd custom (at 5 5.08 ${-90 + p.r}) (size 1.2 0.5) (layers "B.Cu" "B.Mask" "B.Paste") ${p.SCL}
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -360,7 +289,78 @@ module.exports = {
             )
         )
 
-        (pad "9" smd custom (at 5 10.16 ${-90 + p.r}) (size 0.1 0.1) (layers "F.Cu" "F.Mask" "F.Paste")
+        (pad "7" smd custom (at 4 7.62 ${-90 + p.r}) (size 0.1 0.1) (layers "F.Cu" "F.Mask" "F.Paste")
+            (clearance 0.1) (zone_connect 0)
+            (options (clearance outline) (anchor rect))
+            (primitives
+                (gr_poly
+                    (pts
+                        (xy 0.6 0.4)
+                        (xy -0.6 0.4)
+                        (xy -0.6 0.2)
+                        (xy 0 -0.4)
+                        (xy 0.6 0.2)
+                    )   
+                    (width 0)
+                    (fill yes)
+                )
+            )
+            ${local_nets[3]}
+        )
+        (pad "8" smd custom (at 4 7.62 ${-90 + p.r}) (size 0.1 0.1) (layers "B.Cu" "B.Mask" "B.Paste")
+            (clearance 0.1) (zone_connect 0)
+            (options (clearance outline) (anchor rect))
+            (primitives
+                (gr_poly
+                    (pts
+                        (xy 0.6 0.4)
+                        (xy -0.6 0.4)
+                        (xy -0.6 0.2)
+                        (xy 0 -0.4)
+                        (xy 0.6 0.2)
+                    )
+                    (width 0)
+                    (fill yes)
+                )
+            )
+            ${local_nets[3]}
+        )
+        (pad "77" smd custom (at 5 7.62 ${-90 + p.r}) (size 1.2 0.5) (layers "F.Cu" "F.Mask" "F.Paste") ${p.INT}
+            (clearance 0.1) (zone_connect 0)
+            (options (clearance outline) (anchor rect))
+            (primitives
+                (gr_poly
+                    (pts
+                        (xy 0.6 0)
+                        (xy -0.6 0)
+                        (xy -0.6 1)
+                        (xy 0 0.4)
+                        (xy 0.6 1)
+                    )
+                    (width 0)
+                    (fill yes)
+                )
+            )
+        )
+        (pad "88" smd custom (at 5 7.62 ${-90 + p.r}) (size 1.2 0.5) (layers "B.Cu" "B.Mask" "B.Paste") ${p.SDA}
+            (clearance 0.1) (zone_connect 0)
+            (options (clearance outline) (anchor rect))
+            (primitives
+                (gr_poly
+                    (pts
+                        (xy 0.6 0)
+                        (xy -0.6 0)
+                        (xy -0.6 1)
+                        (xy 0 0.4)
+                        (xy 0.6 1)
+                    )
+                    (width 0)
+                    (fill yes)
+                )
+            )
+        )
+
+        (pad "9" smd custom (at 4 10.16 ${-90 + p.r}) (size 0.1 0.1) (layers "F.Cu" "F.Mask" "F.Paste")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -378,7 +378,7 @@ module.exports = {
             )
             ${local_nets[4]}
         )
-        (pad "0" smd custom (at 5 10.16 ${-90 + p.r}) (size 0.1 0.1) (layers "B.Cu" "B.Mask" "B.Paste")
+        (pad "0" smd custom (at 4 10.16 ${-90 + p.r}) (size 0.1 0.1) (layers "B.Cu" "B.Mask" "B.Paste")
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -396,7 +396,7 @@ module.exports = {
             )
             ${local_nets[4]}
         )
-        (pad "99" smd custom (at 6 10.16 ${-90 + p.r}) (size 1.2 0.5) (layers "F.Cu" "F.Mask" "F.Paste") ${p.GND}
+        (pad "99" smd custom (at 5 10.16 ${-90 + p.r}) (size 1.2 0.5) (layers "F.Cu" "F.Mask" "F.Paste") ${p.GND}
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -413,7 +413,7 @@ module.exports = {
                 )
             )
         )
-        (pad "00" smd custom (at 6 10.16 ${-90 + p.r}) (size 1.2 0.5) (layers "B.Cu" "B.Mask" "B.Paste") ${p.VCC}
+        (pad "00" smd custom (at 5 10.16 ${-90 + p.r}) (size 1.2 0.5) (layers "B.Cu" "B.Mask" "B.Paste") ${p.VCC}
             (clearance 0.1) (zone_connect 0)
             (options (clearance outline) (anchor rect))
             (primitives
@@ -430,11 +430,11 @@ module.exports = {
                 )
             )
         )
-        (pad 1 thru_hole oval (at 7 0 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.VCC})
-        (pad 2 thru_hole oval (at 7 2.54 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.SDA})
-        (pad 3 thru_hole oval (at 7 5.08 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.SCL})
-        (pad 4 thru_hole oval (at 7 7.62 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.INT})
-        (pad 5 thru_hole oval (at 7 10.16 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.GND})
+        (pad 1 thru_hole oval (at 6 0 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.VCC})
+        (pad 2 thru_hole oval (at 6 2.54 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.SDA})
+        (pad 3 thru_hole oval (at 6 5.08 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.SCL})
+        (pad 4 thru_hole oval (at 6 7.62 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.INT})
+        (pad 5 thru_hole oval (at 6 10.16 0) (size 0.6 0.6) (drill 0.3) (layers *.Cu *.Mask) ${p.GND})
     )
     `
   }
