@@ -180,6 +180,8 @@ pcbs:
         params:
           reversible: true
           include_traces: true
+          SDA: P2
+          SCL: P3
           
       jst:
         what: jst
@@ -193,7 +195,7 @@ pcbs:
         what: power_switch
         where:
           ref: matrix_reach_top
-          shift: [1.75kx,-.3kx]
+          shift: [1.75kx,-1.2kx]
         params:
           reversible: true
           from: BAT_P
@@ -202,7 +204,7 @@ pcbs:
         what: reset_switch
         where:
           ref: matrix_reach_top
-          shift: [1.75kx,.4kx]
+          shift: [1.72kx,.4kx]
           rotate: 90
         params:
           reversible: true
@@ -213,5 +215,32 @@ pcbs:
         where:
           ref: matrix_middle_bottom
           shift: [.25kx,-.65ky]
+
+      h1:
+        what: mountinghole
+        where:
+          ref: matrix_pinky_top
+          shift: [.6kx,.8ky]
+      h2:
+        what: mountinghole
+        where:
+          ref: matrix_reach_top
+          shift: [1.71kx,0]
+      h3:
+        what: mountinghole
+        where:
+          ref: thumb_fan_reach_cluster
+          shift: [.7kx,0]
+      h4:
+        what: mountinghole
+        where:
+          ref: matrix_ring_bottom
+          shift: [0,-ky]
+      h5:
+        what: mountinghole
+        where:
+          ref: matrix_middle_home
+          shift: [.5kx,-.5ky]
+
 
 
