@@ -81,10 +81,6 @@ points:
           row_net: P9
 
 outlines:  
-  raw:
-    - what: rectangle
-      where: true
-      size: [kx,ky]  
   board:
     - what: polygon
       operation: stack
@@ -110,22 +106,145 @@ outlines:
       - ref: matrix_pinky_bottom
         shift: [-.7kx,-.6kx]
       fillet: 4
-  keys:
+  _keys:
     - what: rectangle
       where: [normal]
       size: [kx-.5,ky-.5]
-  keycaps2:
+  _keys2:
     - what: rectangle
       where: [long]
       size: [2kx-.5,ky-.5]
 
-  preview:
-    [keys,keycaps2]
+  _preview:
+    [_keys,_keys2]
 
   combo:
     - name: board
     - operation: subtract
-      name: preview
+      name: _preview
+
+  _mcu_footprint:
+    - what: rectangle
+      where:
+        ref: matrix_reach_top
+        shift: [1.4kx+1.5,0]
+      size: [35,58]
+
+  _pf:
+    - what: rectangle
+      where:
+        ref: matrix_middle_bottom
+        shift: [0,-21.85]
+      size: [27,24]
+
+  _switch_cutout:
+    - what: rectangle
+      where: true
+      size: 14
+      bound: false
+
+  _pimoroni_footprint:
+    [_pf,-_preview]
+
+  _bigger_board:
+    - what: outline
+      name: board
+      expand: 6
+
+  _cage_holes:
+    - what: circle
+      radius: 1.2
+      where:
+        ref: matrix_pinky_home
+        shift: [-.8kx,1.54kx]
+    - what: circle
+      radius: 1.2
+      where:
+        ref: matrix_pinky_home
+        shift: [-.75kx,-1.7kx]
+    - what: circle
+      radius: 1.2
+      where:
+        ref: matrix_middle_bottom
+        shift: [0,-2.17kx]
+    - what: circle
+      radius: 1.2
+      where:
+        ref: matrix_middle_top
+        shift: [0,.8kx]
+    - what: circle
+      radius: 1.2
+      where:
+        ref: matrix_reach_top
+        shift: [.4kx,.88ky]
+
+    - what: circle
+      radius: 1.2
+      where:
+        ref: thumb_fan_inner_cluster
+        shift: [.45kx,-.86ky]
+
+    - what: circle
+      radius: 1.2
+      where:
+        ref: thumb_fan_reach_cluster
+        shift: [-1.2kx,-.7ky]
+
+    - what: circle
+      radius: 1.2
+      where:
+        ref: thumb_fan_reach_cluster
+        shift: [1.2kx,-.7ky]
+    - what: circle
+      radius: 1.2
+      where:
+        ref: thumb_fan_reach_cluster
+        shift: [1.39kx,.51ky]
+
+  preview:
+    [_bigger_board,-board,_preview,-_cage_holes]
+  
+  plate:
+    [_bigger_board,-_switch_cutout,-_mcu_footprint,-_pimoroni_footprint,-_cage_holes]
+  
+  _mounting_holes:
+    - what: circle
+      radius: 1.2
+      where:
+        ref: matrix_pinky_top
+        shift: [.6kx,.8ky]
+
+    - what: circle
+      radius: 1.2
+      where:
+        ref: matrix_reach_top
+        shift: [1.71kx,0]
+
+    - what: circle
+      radius: 1.2
+      where:
+        ref: thumb_fan_reach_cluster
+        shift: [.7kx,0]
+    
+    - what: circle
+      radius: 1.2
+      where:
+        ref: matrix_ring_bottom
+        shift: [0,-ky]
+
+    - what: circle 
+      radius: 1.2
+      where:
+        ref: matrix_middle_home
+        shift: [.5kx,-.5ky]
+
+  backplate:
+    [_bigger_board,-_mounting_holes,-_cage_holes]
+    
+        
+
+
+      
 
 pcbs:
   flippie:
@@ -241,6 +360,3 @@ pcbs:
         where:
           ref: matrix_middle_home
           shift: [.5kx,-.5ky]
-
-
-
