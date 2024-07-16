@@ -128,7 +128,14 @@ outlines:
       where:
         ref: matrix_reach_top
         shift: [1.4kx+3.5,0]
-      size: [37,78]
+      size: [35,58]
+
+  _jst_cutout:
+    - what: rectangle
+      where:
+        ref: matrix_reach_bottom
+        shift: [1.35kx,6]
+      size: [16,10]
 
   _pf:
     - what: rectangle
@@ -195,12 +202,17 @@ outlines:
       where:
         ref: thumb_fan_reach_cluster
         shift: [1.2kx,-.7ky]
+    - what: circle
+      radius: 1.2
+      where:
+        ref: thumb_fan_reach_cluster
+        shift: [1.39kx,.51ky]
 
   preview:
     [_bigger_board,-board,_preview,-_cage_holes]
   
   plate:
-    [_bigger_board,-_switch_cutout,-_mcu_footprint,-_pimoroni_footprint,-_cage_holes]
+    [_bigger_board,-_switch_cutout,-_mcu_footprint,-_pimoroni_footprint,-_cage_holes,-_jst_cutout]
   
   _mounting_holes:
     - what: circle
