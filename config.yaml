@@ -134,8 +134,8 @@ outlines:
     - what: rectangle
       where:
         ref: matrix_reach_bottom
-        shift: [1.35kx,6]
-      size: [16,10]
+        shift: [1.55kx,7]
+      size: [10,10]
 
   _pf:
     - what: rectangle
