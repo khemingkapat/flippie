@@ -135,7 +135,7 @@ outlines:
       where:
         ref: matrix_reach_bottom
         shift: [1.55kx,7]
-      size: [10,10]
+      size: [12,10]
 
   _pf:
     - what: rectangle
@@ -367,3 +367,4 @@ pcbs:
         where:
           ref: matrix_middle_home
           shift: [.5kx,-.5ky]
+
