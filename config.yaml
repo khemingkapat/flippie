@@ -127,14 +127,14 @@ outlines:
     - what: rectangle
       where:
         ref: matrix_reach_top
-        shift: [1.4kx+3.5,0]
+        shift: [1.4kx+1.7,0]
       size: [35,58]
 
   _jst_cutout:
     - what: rectangle
       where:
         ref: matrix_reach_bottom
-        shift: [1.55kx,7]
+        shift: [1.5kx,7]
       size: [12,10]
 
   _pf:
@@ -367,4 +367,3 @@ pcbs:
         where:
           ref: matrix_middle_home
           shift: [.5kx,-.5ky]
-
